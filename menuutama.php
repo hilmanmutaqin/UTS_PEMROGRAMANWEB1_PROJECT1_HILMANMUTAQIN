@@ -1,0 +1,82 @@
+<?php
+session_start();
+
+if (!isset($_SESSION['user_email'])) {
+    header("Location: index.php"); // kembali ke index jika belum login
+    exit();
+}
+
+// Mengambil informasi pengguna dari user yang sedang login
+$email = $_SESSION['user_email'];
+$full_name = $_SESSION['user_full_name'];
+
+?>
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Menu Utama - SMA AL-AMANAH CIWIDEY</title>
+    <link rel="stylesheet" href="css/menuutama.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+</head>
+
+<body>
+    <!-- NAVBAR -->
+    <nav class="navbar navbar-expand-md navbar-dark bg-primary">
+        <div class="container-fluid mx-auto">
+            <a class="navbar-brand" href="#">
+                <img src="images/Logo_alamanah.png" alt="Logo" width="50" height="50"
+                    class="d-inline-block align-text-center">
+                SMA AL-AMANAH CIWIDEY
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
+                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+                <div class="navbar-nav ms-auto">
+                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
+                    <a class="nav-link" href="logout.php">Logout</a>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <!-- End NAVBAR -->
+
+
+    <!-- Konten Utama -->
+    <div class="container mt-5">
+        <h2>Selamat datang, <?php echo $full_name; ?>!</h2>
+        <p>Ini adalah halaman menu utama. Berikut adalah informasi Anda:</p>
+        <ul>
+            <li><strong>Nama Lengkap:</strong> <?php echo $full_name; ?></li>
+            <li><strong>Email:</strong> <?php echo $email; ?></li>
+        </ul>
+    </div>
+    <!-- End Konten Utama -->
+
+    <!-- FOOTER -->
+    <footer class="footer mt-5 text-center-footer bg-primary text-white">
+        <!-- Konten footer -->
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mx-auto">
+                    <p>&copy; HILMAN MUTAQIN || Mahasiswa teknik informatika</p>
+                    <p>Pemrograman Web 1</p>
+                    <a href="https://sttbandung.ac.id/">SEKOLAH TINGGI TEKNOLOGI BANDUNG</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+    <!-- END FOOTER -->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-eF2Gq1uJZ2qg24t5uXAY4MoazpTYAQv0Lt6Q4r0BjO4eIn1eZ5htpa47EqIbbV4"
+        crossorigin="anonymous"></script>
+
+</body>
+
+</html>
