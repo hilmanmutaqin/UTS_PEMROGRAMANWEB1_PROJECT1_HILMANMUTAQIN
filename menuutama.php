@@ -23,28 +23,44 @@ $full_name = $_SESSION['user_full_name'];
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
 </head>
 
+<style>
+    .offcanvas.show .navbar-nav a.nav-link {
+        color: black !important;
+    }
+
+    .offcanvas.show .navbar-nav {
+        margin-left: 0;
+    }
+</style>
+
 <body>
     <!-- NAVBAR -->
     <nav class="navbar navbar-expand-md navbar-dark bg-primary">
         <div class="container-fluid mx-auto">
             <a class="navbar-brand" href="#">
-                <img src="images/Logo_alamanah.png" alt="Logo" width="50" height="50"
-                    class="d-inline-block align-text-center">
+                <img src="images/Logo_alamanah.png" alt="Logo" width="50" height="50" class="d-inline-block align-text-center">
                 SMA AL-AMANAH CIWIDEY
             </a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-                aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+            <button class="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#navbarNav" aria-controls="navbarNav">
                 <span class="navbar-toggler-icon"></span>
             </button>
-            <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-                <div class="navbar-nav ms-auto">
-                    <a class="nav-link active" aria-current="page" href="#">Dashboard</a>
-                    <a class="nav-link" href="logout.php">Logout</a>
+            <!-- Offcanvas -->
+            <div class="offcanvas offcanvas-end" tabindex="-1" id="navbarNav" aria-labelledby="navbarNavLabel">
+                <div class="offcanvas-header">
+                    <h5 class="offcanvas-title" id="navbarNavLabel">Menu</h5>
+                    <button type="button" class="btn-close text-reset" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+                </div>
+                <div class="offcanvas-body" style="color: black;">
+                    <div class="navbar-nav ms-auto">
+                        <a class="nav-link active text-end" aria-current="page" href="#">Dashboard</a>
+                        <a class="nav-link text-end" href="logout.php">Logout</a>
+                    </div>
                 </div>
             </div>
         </div>
     </nav>
     <!-- End NAVBAR -->
+
 
 
     <!-- Konten Utama -->
@@ -73,9 +89,10 @@ $full_name = $_SESSION['user_full_name'];
     </footer>
     <!-- END FOOTER -->
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"
-        integrity="sha384-eF2Gq1uJZ2qg24t5uXAY4MoazpTYAQv0Lt6Q4r0BjO4eIn1eZ5htpa47EqIbbV4"
-        crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-eF2Gq1uJZ2qg24t5uXAY4MoazpTYAQv0Lt6Q4r0BjO4eIn1eZ5htpa47EqIbbV4" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.min.js"></script>
 
 </body>
 

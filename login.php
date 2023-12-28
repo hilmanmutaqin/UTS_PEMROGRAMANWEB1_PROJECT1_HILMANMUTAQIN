@@ -10,7 +10,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         $result = mysqli_query($conn, $query_sql);
 
         if (mysqli_num_rows($result) > 0) {
-            
+
             $user_data = mysqli_fetch_assoc($result);
 
             // Mulai sesi
@@ -22,7 +22,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
             // Redirect ke menuutama.php
             header("Location: menuutama.php");
-            exit(); 
+            exit();
         } else {
             echo '<script>alert("Email atau password salah");</script>';
         }
@@ -41,9 +41,16 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <link rel="stylesheet" href="css/loginn.css">
 
     <style>
+        body {
+            margin-bottom: 60px;
+        }
 
-
-
+        @media screen and (max-width: 768px) {
+            .footer {
+                display: none;
+                
+            }
+        }
     </style>
 </head>
 
