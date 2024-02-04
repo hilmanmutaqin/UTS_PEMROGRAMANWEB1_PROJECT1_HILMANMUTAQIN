@@ -8,6 +8,6 @@ session_unset();
 session_destroy();
 
 //kembali ke login
-header("Location: login.php");
+header("Location: http://localhost/uts_project1_web1_hilmanmutaqin/index.html");
 exit();
 ?>
